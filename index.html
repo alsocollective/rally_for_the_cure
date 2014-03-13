@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<head>
+	<title>Rally for the Cure</title>
+	<meta charset="utf-8"/>
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=10.0,user-scalable=no" name="viewport"/>
+	<script type="text/javascript" src="/js/lib/skrollr.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery.js"></script>
+	<script type="text/javascript" src="/js/lib/waypoints.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery.scrollstop.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="/js/lib/jquery.scrollsnap.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/screen.css">
+	<link rel="stylesheet" type="text/css" href="//cloud.typography.com/717268/677204/css/fonts.css" />
+</head>
+<body class="yellow-nav">
+<div id="loading-screen"></div>
+<div id="nav-button">
+	<div id="nav-button-container">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+		<div id="background-colour"></div>
+	</div>
+</div>
+<nav id="nav">
+	<div id="nav-container">
+		<ul>
+			<li><a href="about" class="nav-clicker">About</a></li>
+			<li><a href="attenders" class="nav-clicker">Pilot</a></li>
+			<li><a href="attenders" class="nav-clicker">Drivers</a></li>
+			<li><a href="attenders" class="nav-clicker">Guests</a></li>
+			<li><a href="registration" class="nav-clicker">Registration</a></li>
+			<li><a href="contact" class="nav-clicker">Contact</a></li>
+			<li><a href="sponsors" class="nav-clicker">Sponsors</a></li>
+		</ul>
+		<div id="background-colour"></div>
+	</div>
+</nav>
+<div id="carousel" class="section">
+	<div id="carousel-nav">
+		<div class="slide-nav active" id="1"></div>
+		<div class="slide-nav" id="2"></div>
+		<div class="slide-nav" id="3"></div>
+	</div>
+	<div class="slide heighlight">
+		<div class="slide-container">
+			<div class="image-background"></div>
+			<div class="slide-text">
+				<div id="logo-slide">
+					<img src="/assets/icons/ewingslogo.png" id="ewings-logo">
+					<div id="rally-logo">
+						<!--[if lt IE 9]>
+							<img src="/assets/icons/rally-logo.png">
+						<![endif]-->
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 404.766 269.786" preserveAspectRatio="xMaxYMax">
+						<path fill="#FFFFFF" d="M102.308,138.567v13.178c6.277-0.027,12.56,0.073,18.847,0.282v-13.46H102.308z M140.001,138.567v14.379 c6.282,0.395,12.566,0.867,18.852,1.395v-15.772L140.001,138.567L140.001,138.567z M64.604,138.567v15.139 c6.277-0.658,12.562-1.137,18.852-1.453v-13.686H64.604z M273.49,147.107h18.848v-18.853H273.49V147.107z M26.91,138.567v18.848 h12.429c2.139-0.41,4.279-0.793,6.42-1.151v-17.695L26.91,138.567L26.91,138.567z M8.06,157.415v7.936 c6.273-2.014,12.557-3.754,18.85-5.264v-2.672H8.06z M235.793,147.107h18.852v-18.853h-18.852V147.107z M121.154,138.567h18.847 v-18.852h-18.847V138.567z M83.457,138.567h18.85v-18.852h-18.85V138.567z M64.604,119.715H45.759v18.852h18.846L64.604,119.715 L64.604,119.715z M8.06,138.567h18.851v-18.852H8.06V138.567z M158.854,100.863h-18.852v18.853h18.852V100.863z M83.457,100.863 H64.604v18.853h18.852L83.457,100.863L83.457,100.863z M121.154,100.863h-18.847v18.853h18.847V100.863z M311.188,147.107h18.854 v-18.853h-18.854V147.107z M386.588,109.404h-18.852v18.851h18.852V109.404z M254.645,109.404v-2.439 c-6.281-0.412-12.565-0.898-18.852-1.438v3.878L254.645,109.404L254.645,109.404z M140.001,100.863v-4.23 c-6.285-0.412-12.568-0.745-18.847-0.979v5.209H140.001z M292.338,109.404v-1.092c-6.277-0.004-12.561-0.135-18.848-0.368v1.46 H292.338z M330.043,109.404v-2.812c-6.277,0.613-12.562,1.043-18.854,1.321v1.491H330.043z M102.308,100.863v-5.574 c-6.289-0.002-12.573,0.121-18.851,0.402v5.172H102.308z M45.759,119.715v-18.853h-8.085c-3.591,0.68-7.179,1.43-10.764,2.258 v16.595H45.759L45.759,119.715z M64.604,100.863v-3.846c-6.289,0.616-12.571,1.422-18.846,2.426v1.42H64.604z M292.338,147.107 v17.651c6.289,0.033,12.572-0.062,18.852-0.307v-17.346L292.338,147.107L292.338,147.107z M311.188,109.404h-18.851v18.851h18.851 V109.404z M273.49,109.404h-18.848v18.851h18.848V109.404z M348.891,109.404h-18.848v18.851h18.848V109.404z M367.736,147.107 v10.345c6.293-1.396,12.576-3.029,18.852-4.916v-5.429H367.736z M367.736,109.404v-8.908c-6.273,1.447-12.557,2.667-18.848,3.673 v5.235H367.736z M254.645,147.107v16.171c6.284,0.43,12.567,0.782,18.847,1.039v-17.21H254.645z M348.891,147.107h18.846v-18.853 h-18.846V147.107z M348.891,147.107v13.853c-6.275,0.955-12.559,1.705-18.848,2.279v-16.132H348.891z"/>
+						<path fill="#FFFFFF" d="M374.236,228.299h7.977v23.279l-16.097-11.83c-2.306-1.691-5.573-3.305-8.888-3.305 c-2.306,0-4.707,1.307-4.707,3.305c0,2.033,1.969,3.146,4.418,3.146c0.482,0,1.009-0.036,1.539-0.112v8.297 c-8.312-0.229-13.932-4.457-13.932-11.291c0-6.07,4.997-11.181,12.875-11.181c5.186,0,8.214,1.729,11.574,4.687l5.24,4.498V228.299 L374.236,228.299z"/>
+						<path fill="#FFFFFF" d="M364.051,219.422c3.508,0,11.289-0.922,11.289-4.803s-7.781-4.805-11.289-4.805 c-3.507,0-11.191,0.924-11.191,4.805C352.857,218.5,360.544,219.422,364.051,219.422 M364.098,202.329 c9.418,0,19.555,3.647,19.555,12.293s-10.137,12.297-19.555,12.297c-9.414,0-19.55-3.688-19.55-12.297 C344.548,206.016,354.684,202.329,364.098,202.329"/>
+						<polygon fill="#FFFFFF" points="353.961,202.135 345.986,202.135 345.986,190.458 382.212,190.458 382.212,197.991 353.961,197.991  "/>
+						<path fill="#FFFFFF" d="M213.857,173.948h2.435c8.198,0,17.422,1.536,17.422,12.043c0,10.502-9.224,12.038-17.422,12.038h-2.435 V173.948z M188.752,251.318h25.105V214.17h0.257l23.696,37.147h31.256l-30.359-39.583c13.708-2.434,21.136-13.962,21.136-27.281 c0-7.672-2.008-13.742-5.505-18.35c-21.842-1.501-43.717-3.887-65.586-6.102V251.318z"/>
+						<path fill="#FFFFFF" d="M330.329,175.999v-9.938c-18.269,1.685-36.595,1.866-54.953,1.176v84.084h54.953v-21.265H300.48v-16.651 h28.31v-21.265h-28.31v-16.141H330.329z"/>
+						<polygon fill="#FFFFFF" points="174.422,109.963 174.402,113.911 181.136,113.945 181.109,119.144 174.375,119.11 174.329,128.382  168.189,128.349 168.31,104.735 181.87,104.804 181.844,110.002 "/>
+						<path fill="#FFFFFF" d="M189.655,116.243c-0.021,4.072,2.969,7.061,6.634,7.082c3.665,0.018,6.686-2.942,6.706-7.015 c0.017-3.257-2.976-6.248-6.638-6.265C192.691,110.026,189.672,112.986,189.655,116.243 M209.384,116.312 c-0.036,7.642-5.546,12.999-13.124,12.961c-7.581-0.039-13.031-5.453-12.994-13.094c0.036-7.141,6.322-12.12,13.121-12.086 C203.182,104.128,209.42,109.172,209.384,116.312"/>
+						<path fill="#FFFFFF" d="M217.205,115.574l0.593,0.003c2.007,0.01,4.265-0.355,4.274-2.921c0.013-2.569-2.239-2.956-4.244-2.966 l-0.596-0.004L217.205,115.574z M230.637,128.67l-7.643-0.037l-5.749-9.112h-0.062l-0.045,9.082l-6.14-0.032l0.12-23.613 l9.177,0.046c4.664,0.023,8.19,2.267,8.168,7.308c-0.017,3.256-1.849,6.066-5.202,6.644L230.637,128.67z"/>
+						<polygon fill="#FFFFFF" points="181.407,155.458 175.268,155.424 175.361,137.01 170.286,136.986 170.315,131.785 186.597,131.868  186.574,137.067 181.5,137.042 "/>
+						<polygon fill="#FFFFFF" points="204.671,141.068 204.718,131.952 210.854,131.984 210.736,155.598 204.598,155.567 204.645,145.89  195.784,145.844 195.733,155.522 189.597,155.493 189.714,131.875 195.854,131.908 195.808,141.021 "/>
+						<polygon fill="#FFFFFF" points="220.706,137.236 220.689,141.18 227.607,141.213 227.585,146.415 220.663,146.377 220.641,150.45  227.938,150.489 227.911,155.685 214.479,155.618 214.593,132.003 228.031,132.072 228.004,137.271 "/>
+						<path fill="#FFFFFF" d="M367.464,179.926l-13.978-6.844v-0.076h13.978V179.926z M374.693,162.392h-7.229v3.538h-21.592v9.99 l22.798,11.313h6.023v-14.229h7.519v-7.076h-7.519V162.392z"/>
+						<path fill="#FFFFFF" d="M307.145,105.224c1.737-0.06,3.478-0.125,5.213-0.208V83.959h-30.103V8.64h-25.106v95.642 c6.674,0.416,13.345,0.738,20.009,0.942H307.145z"/>
+						<path fill="#FFFFFF" d="M354.564,58.854l35.61-50.214h-30.103L342.01,34.899L323.95,8.64h-30.104l35.609,50.214v44.942 c8.383-0.805,16.754-1.93,25.109-3.438V58.854L354.564,58.854z"/>
+						<path fill="#FFFFFF" d="M23.532,167.799c-9.222,9.479-14.219,22.158-14.219,35.354c0,14.348,4.869,26.902,15.5,36.508 c9.99,9.094,22.801,14.217,36.25,14.217c7.813,0,13.836-1.92,22.162-4.481v-30.103c-5.251,6.276-13.449,10.248-21.647,10.248 c-15.63,0-26.132-11.017-26.132-26.26c0-14.988,10.374-26.771,25.745-26.771c8.585,0,16.909,3.716,22.034,10.633V157.04 c-1.495-0.619-2.991-1.17-4.49-1.682c-16.278,1.027-32.512,3.163-48.688,6.836C27.718,163.883,25.527,165.75,23.532,167.799"/>
+						<path fill="#FFFFFF" d="M247.57,83.959h-30.1V8.64h-25.108v89.802c18.409,1.883,36.819,3.819,55.208,5.182V83.959z"/>
+						<path fill="#FFFFFF" d="M135.318,38.488h0.256l10.248,30.741h-20.879L135.318,38.488z M116.356,92.651l1.67-4.206h34.585 l2.414,6.451c9.234,0.762,18.473,1.646,27.714,2.571L149.282,8.64h-27.413L89.568,92.619 C98.487,92.36,107.417,92.396,116.356,92.651"/>
+						<path fill="#FFFFFF" d="M32.883,27.855h2.433c8.198,0,17.422,1.537,17.422,12.041c0,10.505-9.224,12.042-17.422,12.042h-2.433 V27.855z M32.883,68.078h0.255l17.708,27.754c9.297-1.324,18.611-2.212,27.938-2.745L57.732,65.643 C71.438,63.21,78.87,51.68,78.87,38.36c0-20.623-14.477-29.72-33.56-29.72H7.777v96.583h0.755c8.1-2.501,16.218-4.57,24.35-6.259 L32.883,68.078L32.883,68.078z"/>
+						<path fill="#FFFFFF" d="M153.692,205.586c0,12.555-0.898,26.262-17.037,26.262c-16.141,0-17.038-13.707-17.038-26.262v-50.756 c-1.164-0.037-2.329-0.068-3.492-0.097H94.512v54.312c0,12.426,0.51,24.725,10.118,34.074c8.07,7.941,20.753,10.76,32.025,10.76 c11.271,0,23.952-2.817,32.024-10.76c9.607-9.351,10.118-21.648,10.118-34.074v-50.033c-8.371-0.817-16.74-1.584-25.105-2.243 V205.586z"/>
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="slide off">
+		<div class="slide-container">
+			<div class="image-background"></div>
+			<div class="slide-text">
+				<div id="quote-container">
+					<p class="quote">
+						In 1998 I lost my younger brother Tony to Ewings Sarcoma. He was not only my brother but my best friend. After going through this, let's just say I live for 2 each day and I don't sweat the small stuff!
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="slide off">
+		<div class="slide-container">
+			<div class="image-background"></div>
+			<div class="slide-text"><h2>slide 3</h2></div>
+		</div>
+	</div>
+</div>
+<div id="container">
+	<div id="spacer" class="section"></div>
+	<div id="about" class="section">
+		<div id="dimond">
+			<div></div>
+		</div>
+		<div id="background-image-container">
+			<div id="background-1"></div>
+ 			<div id="background-2" data-top-bottom="transform: translateX(0%) skewX(-45deg)" data-500-bottom="transform: translateX(50%) skewX(-45deg)">
+				<div  data-top-bottom="transform: translateX(0%) skewX(45deg)" data-500-bottom="transform: translateX(-100%) skewX(45deg)"></div>
+			</div>
+		</div>
+		<div class="title">INSPIRATION</div>
+		<div id="left" >
+			<div id="imageBox"></div>
+		</div><div id="right">
+			<p>PILOTS TAKE TO THE AIR AND DRIVERS TO THE ROAD TO RAISE FUNDS FOR CANCER RESEARCH
+			</p>
+			<p>On Sunday September 14, 2014 The Ewings Cancer Foundation of Canada (ECFC) will host its 5th Annual Rally for the Cure, a charity fundraising event featuring an Air and Car Rally with a treasure hunt theme.  The Car Rally will take place throughout the York Region as the Air Rally takes place simultaneously from six participating Municipal Airports.
+			</p>
+			<p>The Rally is followed by an enjoyable afternoon at Buttonville Airport that includes an M&amp;M “special menu” BBQ lunch, a sensational silent auction, live musical entertainment featuring The Emma Street Band and Glenn Reid &amp; Boogaloo with an awards ceremony and Citytv’s own BT personality Frank Ferragine as the event MC.</p>
+			<p>All proceeds from this event go directly to The Ewings Cancer Foundation of Canada to support Ewing sarcoma specific research grants.</p>
+			<p>Ewing sarcoma occurs most often in 10-20 year olds but can happen at any age and is the second most common bone cancer. Ewing sarcoma is a highly aggressive cancer that often goes undiagnosed or is mistaken as growing pains or a sports injury.If metastases has occurred, the chance of cure is less than 20%.</p>
+			<p>Tina Pernica, Founder of the ECFC, speaks about her son, Reid, a young pilot who lost his battle with this disease in November 2007.  He was 19 years old.</p>
+			<p>“It was always Reid’s dream to become a pilot.  He was able to fulfill that dream while working at Buttonville Airport and taking flying lessons. He made his first solo flight just months before his cancer, then in remission, returned.  The wings in our logo symbolize Reid’s dream of flight.”</p>
+			<p>“Our loss of Reid to Ewing sarcoma was devastating.” Tina attests. “It was infuriating to learn how little research has been completed since its discovery in the 1920s. How can physicians treat the disease without greater understanding?”</p>
+			<p>“Most importantly, we want the children and young adults affected by this disease to ultimately reap the benefits of this research,” Tina emphasizes, “and to have the opportunity to look forward to living long lives spent fulfilling their dreams.”</p>
+		</div>
+	</div>
+	<div id="attenders" class="section snap">
+		<div id="guests" class="main-coloum">
+			<!--[if lt IE 9]>
+				<img src="/assets/icons/ic-people.png">
+			<![endif]-->
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 90 90">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M61.04,58.666c-1.876-2.906-4.148-4.794-7.399-5.863c0,0-2.452-1.261-8.859-1.261   c-6.408,0-8.861,1.261-8.861,1.261c-3.25,1.08-5.523,2.956-7.401,5.863c-0.743,1.144-1.145,3.445-1.172,4.674   c0.01,0.32,0,0.691,0,1.061v2.12v-1.463c0,2.344,1.6,4.241,3.574,4.241h27.714c1.975,0,3.574-1.897,3.574-4.241v1.463v-2.12   c0-0.37-0.007-0.741,0-1.061C62.184,62.111,61.783,59.809,61.04,58.666 M35.012,35.455c0,5.434,3.387,13.415,9.77,13.415   c6.27,0,9.766-7.982,9.766-13.415c0-5.433-4.372-9.844-9.766-9.844C39.386,25.611,35.012,30.022,35.012,35.455"/>
+				<path d="M34.006,50.317c-1.575-1.999-3.464-3.37-5.993-4.2c0,0-2.292-1.179-8.279-1.179c-5.99,0-8.282,1.179-8.282,1.179    c-3.037,1.008-5.162,2.762-6.916,5.478c-0.695,1.069-1.07,3.22-1.096,4.369c0.009,0.3,0,0.646,0,0.992v0.613    c0,2.19,1.495,3.963,3.341,3.963h16.725c0.238-1.387,0.661-2.91,1.263-3.835C27.119,54.056,29.965,51.695,34.006,50.317z"/>
+				<path d="M19.733,42.44c5.86,0,9.127-7.461,9.127-12.538c0-5.078-4.087-9.201-9.127-9.201c-5.044,0-9.132,4.123-9.132,9.201    C10.602,34.98,13.768,42.44,19.733,42.44z"/>
+				<path d="M55.584,50.317c1.575-1.999,3.464-3.37,5.993-4.2c0,0,2.291-1.179,8.279-1.179c5.989,0,8.282,1.179,8.282,1.179    c3.038,1.008,5.162,2.762,6.916,5.478c0.695,1.069,1.07,3.22,1.096,4.369c-0.009,0.3,0,0.646,0,0.992v0.613    c0,2.19-1.495,3.963-3.341,3.963H66.085c-0.238-1.387-0.661-2.91-1.263-3.835C62.471,54.056,59.625,51.695,55.584,50.317z"/>
+				<path d="M69.857,42.44c-5.86,0-9.127-7.461-9.127-12.538c0-5.078,4.087-9.201,9.127-9.201c5.044,0,9.132,4.123,9.132,9.201    C78.989,34.98,75.823,42.44,69.857,42.44z"/>
+			</svg>
+			<br>
+			<h2>Information<br>for Guests</h2>
+			<div id="text">
+				<p>
+					The Rally is followed by an enjoyable afternoon at Buttonville Municipal Airport in Hangar 17A that includes an M&amp;M “special menu” BBQ lunch, a sensational silent auction, live musical entertainment featuring The Emma Street Band and Glenn Reid &amp; Boogaloo with an awards ceremony and Citytv’s own BT personality Frank Ferragine as the event MC.
+				</p>
+				<p>
+					Please also take into consideration downloading our pledge form (can be found on our registration page). This form is not required, however, greatly appreciated in helping us raise funds for ECFC Ewing sarcoma research. These donations / pledges are tax deductible and will receive an official receipt from The Ewings Cancer Foundation of Canada.
+				</p>
+				<p>
+					Prizes will be awarded to the top three pledge collectors for the highest total pledges collected.
+				</p>
+				<p>
+					We sincerely thank you for helping ECFC to achieve our Ewing sarcoma research granting goals.
+				</p>
+				<h3>
+					Tickets
+				</h3>
+
+				<table>
+					<tr><td>$25.00</td><td>Adults</td></tr>
+					<tr><td>$12.50</td><td>Children 4–12</td></tr>
+					<tr><td>FREE</td><td>Children 3 and Under</td></tr>
+				</table>
+
+				<p>
+					Tickets can be ordered on the Rally website or at the gate
+				</p>
+				<p>
+					BBQ starts at 1:00pm at Buttonville Airport Hanger 17A
+				</p>
+				<p>
+					Parking available at 180 Renfrew Drive (refer to map)
+				</p>
+				<p>
+					The Ewings Cancer Foundation of Canada<br>
+					Rally Registration<br>
+					72 Rockport Crescent<br>
+					Richmond Hill, Ontario, Canada<br>
+					L4C 2L8
+				</p>
+			</div>
+		</div><div id="pilots" class="main-coloum">
+			<!--[if lt IE 9]>
+				<img src="/assets/icons/ic-plane.png">
+			<![endif]-->
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 100 100">
+				<path d="M94.6,29.227c-2.264-2.155-14.176,0.303-18.441,1.27L86.191,1L76.189,2.955L77.37,5.03L64,31.212l-1.244,0.042  c0,0-18.391,7.286-21.421,10.809c-2.727,3.172-14.312,8.594-16.596,9.643l4.945-9.162l-5.753,2.562l-5.199,7.509l-9.161-8.75  l-4.62,2.586l6.274,15.857l-2.783,2.463l-3.276,8.922l5.585-1.729l5.765-8.179l30.003-4.968L24.03,95.788l-5.298,2.723l15.047-3.237  L61.38,57.561l7.261-6.951c22.381-9.038,24.662-16.146,24.662-16.146S95.102,31.062,94.6,29.227z M62.809,32.055  c1.062-1.922,7.801-0.548,8.771-0.588c0.809-0.033,0.479,0.408,0.418,0.578s-2.771,5.002-4.154,7.432  c-1.384,2.429-3.164,1.514-3.164,1.514C58.334,36.599,61.747,33.977,62.809,32.055z M55.486,40.011  c1.121-0.465,2.574-1.419,4.186-0.021c1.165,0.858,3.137,2.32,2.01,3.213L57.708,45.1c0,0-1.062,0.296-1.917-1.346  C54.938,42.114,54.366,40.477,55.486,40.011z M42.474,46.518c0.238-0.539,6.857-3.704,8.239-4.364  c1.38-0.661,1.812-0.939,2.777,1.076c1.447,3.029,0.625,3.378,0.625,3.378s-6.271,2.858-8.969,3.724  C42.579,50.285,42.236,47.055,42.474,46.518z M29.932,55.484c10.791-0.209,52.034-15.408,51.048-14.512  C79.997,41.868,50.152,51.33,50.152,51.33C36.138,56.337,29.932,55.484,29.932,55.484z M45.527,54.676  c0,0,37.489-13.687,38.021-13.658C83.952,41.04,68.417,47.83,45.527,54.676z"/>
+			</svg>
+			<br>
+			<h2>Information<br>for Pilots</h2>
+			<div id="text">
+				<p>
+					Each participating aircraft must have a minimum of 2 people on board (the pilot and the Co-Pilot)
+				</p>
+				<p>
+					You are able to choose any of the 6 participating airports to begin:
+				</p>
+				<p>
+					Start at any of the participating airports:
+				</p>
+				<table>
+					<tr><td>Buttonville</td><td>CYKZ</td></tr>
+					<tr><td>Peterborough</td><td>CYPO</td></tr>
+					<tr><td>Edenvale</td><td>CNV8</td></tr>
+					<tr><td>Lindsay</td><td>CNFA</td></tr>
+					<tr><td>Oshawa</td><td>CYOO</td></tr>
+					<tr><td>Kingston</td><td>CYGK</td></tr>
+				</table>
+				<p>
+					Starting times will be between 9am – 10am.
+				</p>
+				<p>
+					At the participating airport of choice you will be provided with a choice of two alternate routes and accompanying routes instructions along with a colour-coded questionnaire.
+				</p>
+				<p>
+					The starting instructions will specify 2 designated intermediate stops and the final stop at Buttonville Municipal Airport. At each intermediate stop you will be required to pick up a questionnaire for the next flight leg. It will be on different coloured paper.
+				</p>
+				<p>
+					You must bring 3 different coloured questionnaires to complete the rally. These will be collected when you arrive at Buttonville.
+				</p>
+				<p>
+					Please communicate with Toronto Terminal when appropriate and broadcast your intentions on the local VFR frequencies and Unicom’s.
+				</p>
+			</div>
+		</div><div id="drivers" class="main-coloum">
+			<!--[if lt IE 9]>
+				<img src="/assets/icons/ic-car.png">
+			<![endif]-->
+			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 79.705">
+				<path d="M91.365,46.181c0,0,0.613-3.684,0.552-4.666c-0.062-0.981-8.595-1.596-14.364-2.087c-3.171-0.27-5.746-0.243-7.426-0.164 c0.021,0.012,0.043,0.024,0.059,0.032c0.031,0.006,0.055,0.012,0.062,0.021c0.009,0.013-0.013,0.004-0.062-0.021 c-0.098-0.018-0.305-0.018-0.587-0.004c-1.044,0.062-1.622,0.136-1.622,0.136l-0.018-0.008c-1.547,0.146-3.311,0.358-3.311,0.358 l-8.443-5.802l0.208-0.5l-0.96-0.494c0,0-2.088-1.289-8.717-1.228c-6.63,0.062-11.541,1.657-11.541,1.657 s-17.004,5.771-17.188,5.894c-0.185,0.123-9.208,0.982-9.208,0.982S5.852,47.655,9.965,50.54l8.901,0.921l0.844,0.057 c-0.089-0.438-0.136-0.892-0.136-1.356c0-3.764,3.051-6.814,6.814-6.814c3.764,0,6.814,3.051,6.814,6.814 c0,0.783-0.139,1.532-0.382,2.233l1.639,0.11l36.403-0.313c0,0,0.77-0.03,1.975-0.081c-0.186-0.618-0.287-1.272-0.287-1.95 c0-3.764,3.051-6.813,6.813-6.813c3.764,0,6.813,3.05,6.813,6.813c0,0.416-0.043,0.821-0.113,1.218 c0.14-0.014,0.272-0.026,0.391-0.039c3.314-0.369,4.604-1.413,4.604-1.413V47.9l1.167-0.123V46.24L91.365,46.181z M26.391,39.004 v-0.491l1.448-0.438l0.148,0.929H26.391z M29.366,39.107l-0.238-1.421l1.068-0.323l0.252,1.744H29.366z M53.243,33.781l7.796,6.077 H39.922l-1.535-4.911C38.387,34.947,45.938,32.922,53.243,33.781z M34.924,35.934l1.105,3.315l-1.645-0.042l-0.718-2.894 L34.924,35.934z M31.364,37.01l1.209-0.365l0.509,2.529l-1.229-0.03L31.364,37.01z M59.105,49.483l-7.889,0.102 c-1.314,0.014-2.629,0.038-3.944,0.039l-3.944,0.016l-7.889,0.033l-0.349,0.001l-0.014-0.367c-0.008-0.202-0.009-0.404-0.022-0.605 c-0.022-0.199-0.03-0.401-0.064-0.6c-0.028-0.198-0.059-0.396-0.105-0.592c-0.037-0.197-0.1-0.387-0.151-0.579 c-0.066-0.188-0.127-0.378-0.208-0.561c-0.074-0.184-0.162-0.362-0.257-0.535c-0.093-0.175-0.198-0.342-0.31-0.501 c-0.056-0.08-0.115-0.158-0.176-0.231c-0.057-0.071-0.129-0.151-0.178-0.199l-0.61-0.605l0.844-0.008l7.259-0.062l3.63-0.026 l3.63-0.001l3.629-0.001c1.211,0.001,2.42-0.006,3.631,0.008c2.42,0.022,4.84,0.026,7.262,0.069 c-2.42,0.104-4.839,0.169-7.258,0.252c-1.209,0.044-2.419,0.068-3.629,0.1l-3.629,0.091l-3.629,0.09l-3.629,0.065l-6.528,0.108 c0.115,0.164,0.222,0.331,0.316,0.505c0.108,0.195,0.208,0.395,0.293,0.6c0.091,0.202,0.161,0.413,0.236,0.622 c0.06,0.212,0.13,0.423,0.172,0.639c0.054,0.215,0.089,0.433,0.122,0.649c0.04,0.218,0.044,0.438,0.067,0.655 c0.006,0.098,0.006,0.195,0.008,0.292l7.535,0.031l3.944,0.017c1.314,0,2.629,0.025,3.944,0.039l7.889,0.102 c2.63,0.058,5.259,0.094,7.888,0.174C64.363,49.389,61.734,49.425,59.105,49.483z"/>
+				<path d="M26.294,44.324c-3.221,0-5.832,2.611-5.832,5.832s2.611,5.831,5.832,5.831c3.22,0,5.832-2.61,5.832-5.831 S29.515,44.324,26.294,44.324z M26.294,52.608c-1.357,0-2.456-1.099-2.456-2.455s1.099-2.456,2.456-2.456 c1.356,0,2.455,1.1,2.455,2.456S27.65,52.608,26.294,52.608z"/>
+				<path d="M79.271,44.324c-3.221,0-5.832,2.611-5.832,5.832s2.611,5.831,5.832,5.831s5.832-2.61,5.832-5.831 S82.492,44.324,79.271,44.324z M79.271,52.611c-1.356,0-2.455-1.099-2.455-2.455s1.099-2.456,2.455-2.456s2.455,1.1,2.455,2.456 S80.627,52.611,79.271,52.611z"/>
+			</svg>
+			<br>
+			<h2>Information<br>for Drivers</h2>
+			<div id="text">
+				<p>
+					Please note that this is not a speed event, this event is a fun filled afternoon with a treasure hunt theme.
+				</p>
+				<p>
+					The starting Point will be:<br>
+					Bayview Secondary School,<br>
+					10077 Bayview Avenue,<br>
+					Richmond Hill ON<br>
+					L4C 2L4
+				</p>
+				<h3>Map</h3>
+				<p>
+					Starting times will be between 9:30am – 10:30am.
+				</p>
+				<p>
+					At the Rally departure point you will be provided with your rally instruction package along with a Rally for the Cure flag to be placed on the window of your vehicle for the duration of the Rally to be followed by a BBQ and silent auction with live entertainment by the The Emma Street Band and Glenn Reid &amp; Boogaloo.
+				</p>
+			</div>
+		</div>
+		<div id="guests" class="background-coloums">
+			<svg version="1.1"
+				 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+				 viewBox="0 0 5 5" preserveAspectRatio="none">
+			<polygon opacity="0.05" fill="#FFFFFF" points="5,5 0,5 5,0 "/>
+			</svg>
+		</div>
+		<div id="pilots" class="background-coloums">
+			<svg version="1.1"
+				 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+				 viewBox="0 0 5 5" preserveAspectRatio="none">
+			<polygon opacity="0.05" fill="#FFFFFF" points="5,5 0,5 5,0 "/>
+			</svg>
+		</div>
+		<div id="drivers" class="background-coloums">
+			<svg version="1.1"
+				 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+				 viewBox="0 0 5 5" preserveAspectRatio="none">
+			<polygon opacity="0.05" fill="#FFFFFF" points="5,5 0,5 5,0 "/>
+			</svg>
+		</div>
+	</div>
+	<div id="registration" class="section snap">
+		<div class="title">Registration</div>
+		<div id="paypal" class="half">
+			<h2><a href="">Online Payment</a></h2>
+			<p>Download, complete and send via email (contact@ewingscancer.ca) Registration and waiver form. You will receive a confirmation by us via email once payment and forms have both been received.</p>
+
+		</div><div id="cheque" class="half">
+			<h2><a href="https://guestlistapp.com/events/236055">Cheque</a></h2>
+			<p>Print and complete your registration form and mail it along with your cheque made payable to The Ewings Cancer Foundation of Canada to the address below, be sure to include your signed waiver from. You will receive a confirmation by us via email once payment and forms have both been received.</p>
+		</div>
+		<div id="docs">
+			<h2>Required Documents</h2><br>
+			<div>
+				<img src="/assets/icons/ic-waiver.png" width="80px">
+				<h3><a href="/assets/downloads/waiver.pdf">Download</a></h3>
+				<p>Waiver Form</p>
+			</div>
+			<div>
+				<img src="/assets/icons/ic-pledge.png" width="80px">
+				<h3><a href="/assets/downloads/pledge-sheet.pdf">Download</a></h3>
+				<p>Pledge Form</p>
+			</div>
+			<div>
+				<img src="/assets/icons/ic-registration.png" width="80px">
+				<h3><a href="/assets/downloads/registration-form.pdf">Download</a></h3>
+				<p>Registration Form</p>
+			</div>
+		</div>
+	</div>
+	<div id="map" class="section snap">
+		<div id="map-container"></div>
+		<div id="map-loading"><div>Loading Map</div></div>
+	</div>
+	<div id="sponsors" class="section snap">
+		<svg version="1.1"
+			 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+			 viewBox="0 0 5 5" preserveAspectRatio="none">
+		<polygon opacity="0.05" fill="#FFFFFF" points="5,5 0,5 5,0 "/>
+		</svg>
+		<h2 id="title">Sponsors</h2>
+		<div class="sponsor">
+			<h3>Platinum</h3>
+			<img src="/assets/logos/copa.png">
+			<img src="/assets/logos/copa.png">
+		</div>
+		<div class="sponsor">
+			<h3>Gold</h3>
+			<img src="/assets/logos/copa.png">
+			<img src="/assets/logos/copa.png">
+		</div>
+		<div class="sponsor">
+			<h3>Silver</h3>
+			<img src="/assets/logos/copa.png">
+			<img src="/assets/logos/copa.png">
+		</div>
+		<div class="sponsor">
+			<h3>Bronze</h3>
+			<img src="/assets/logos/copa.png">
+			<img src="/assets/logos/copa.png">
+			<img src="/assets/logos/copa.png">
+			<img src="/assets/logos/copa.png">
+			<img src="/assets/logos/copa.png">
+			<img src="/assets/logos/copa.png">
+		</div>
+	</div>
+</div>
+<div id="contact" class="scroll-out">
+	<div id="click-away"></div>
+	<div id="content">
+		<div>
+			<p>
+				<span>Contact Us</span> | <span>Ewings Cancer Foundation of Canada</span> | <a href="">contact@ewingscancer.ca</a> | <a href="">Tel: 905-737-0127</a>
+			</p>
+		</div>
+	</div>
+
+</div>
+<script type="text/javascript" src="/js/main.js"></script>
+</body>
+</html>
+
+
+
