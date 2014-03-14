@@ -45,6 +45,7 @@ $(document).ready(function() {
 		$("#sponsors").waypoint(hideNavMenue,{
 			offset:-50
 		});
+		$(window).mousewheel(stopScrollIfScrolling);
 		if($(window).scrollTop()<50 ){ //TODO add detection and scrolling to location based of url
 			$("#carousel").waypoint(scrollFromCarocel,{
 				offset:-100
@@ -493,9 +494,12 @@ function scrollFromCarocel(direction){
 		return false;
 	}
 	if(direction == "down"){
+		scrolling = true;
 		$('html, body').animate({
 			scrollTop: $("#about").offset().top
-		}, 1000);
+		}, 1000,function(){
+			scrolling = false;
+		});
 	}
 }
 
@@ -527,6 +531,14 @@ function setMarginTop(){
 	$("#spacer").css({"margin-top":$(window).height()});
 }
 
+function stopScrollIfScrolling(event){
+	if(scrolling){
+		event.preventDefault();
+		console.log("stoppppiinngng");
+		return false;
+	}
+}
+
 function animateScroll(element){
 	if(scrolling){
 		return false;
@@ -554,9 +566,11 @@ function setURL(location){
 }
 
 function setUpMap(){
-	var map = $("#map-loading")
-	map.children()[0].innerHTML = "Tap to load map";
-	map.click(loadMapOnClick);
+
+	/*old map SETUP*/
+	// var map = $("#map-loading")
+	// map.children()[0].innerHTML = "Tap to load map";
+	// map.click(loadMapOnClick);
 }
 function loadMapOnClick(){
 	var el = $(this).children()[0];
