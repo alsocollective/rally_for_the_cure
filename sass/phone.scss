@@ -358,7 +358,7 @@ body{
 		}
 		p{
 			@extend .body-type;
-			margin: 1.5em 8px 0 0;
+			margin: 1.5em 0 0 0;
 		}
 		p:last-child{
 			padding-bottom: 3em;
@@ -407,7 +407,7 @@ body{
 	.title{
 		@extend .titles;
 		font-size: 2.3em;
-		padding-top: 2em;
+		padding: 2em 0 1em 0;
 		width: 100%;
 		text-align: center;
 	}
@@ -417,17 +417,18 @@ body{
 	}
 	.half{
 		font-weight: lighter;
-		margin-left: 2em;
-		text-align: left;
+		margin: 0 1em 0 1em;
+		text-align: center;
 		p{
+			text-align: left;
 			@extend .body-type;
-			margin: 0.5em 8px 1em 0;
+			margin: 1.5em 0 1em 0;
 		}
 	}
 	#docs{
 		font-weight: lighter;
 		margin: 0 2em 0 2em;
-		text-align: left;
+		text-align: center;
 		> div{
 			padding: 1em 0;
 			display: inline-block;
@@ -443,54 +444,71 @@ body{
 
 #map{
 	width: 100%;
-	height: 70%;
-	background-color: #fff;
-	#map-container{
-		height: 100%;
-		width: 100%;
-	}
-	#map-loading{
-		height: 100%;
-		width: 100%;
-		position: absolute;
-		left: 0;
-		top: 0;
-		display: table;
-		background-position: center;
-		background-repeat: no-repeat;
-		@include vendorize(background-size,cover);
-		background-image: url("/assets/img/map-loading.jpg");
-		> div{
-			opacity: 1;
-			color: #fff;
-			@include bold();
-			font-size: 3em;
-			@include vendorize(text-shadow, 0px 0px 10px rgba(0,0,0,0.5));
-			@include vendorize(text-shadow, 0px 0px 10px #000);
-			display: table-cell;
-			text-align: center;
-			vertical-align: middle;
-			@include vendorize(transition,opacity 0.5s);
-		}
-	}
-	#map-loading .clicked{
-		opacity: 1;
-	}
-	.off{
-		display: none !important;
-	}
-	.fade{
-		@include vendorize(animation,fadeOut 1s forwards);
-	}
-	#legend{
+	background-color: $yellow;
+	#map-container,#map-loading{
 		display: none;
 	}
+	#map-hyper-location{
+		.title{
+			@extend .titles;
+			font-size: 2.3em;
+			padding-top: 2em;
+			width: 100%;
+			text-align: center;
+		}
+		dl{
+			padding: 3em 1em 0 1em;
+		}
+		dd{
+			padding: 0.1em 0 1em 0.5em;
+		}
+	}
+	// #map-container{
+	// 	height: 100%;
+	// 	width: 100%;
+	// }
+	// #map-loading{
+	// 	height: 100%;
+	// 	width: 100%;
+	// 	position: absolute;
+	// 	left: 0;
+	// 	top: 0;
+	// 	display: table;
+	// 	background-position: center;
+	// 	background-repeat: no-repeat;
+	// 	@include vendorize(background-size,cover);
+	// 	background-image: url("/assets/img/map-loading.jpg");
+	// 	> div{
+	// 		opacity: 1;
+	// 		color: #fff;
+	// 		@include bold();
+	// 		font-size: 3em;
+	// 		@include vendorize(text-shadow, 0px 0px 10px rgba(0,0,0,0.5));
+	// 		@include vendorize(text-shadow, 0px 0px 10px #000);
+	// 		display: table-cell;
+	// 		text-align: center;
+	// 		vertical-align: middle;
+	// 		@include vendorize(transition,opacity 0.5s);
+	// 	}
+	// }
+	// #map-loading .clicked{
+	// 	opacity: 1;
+	// }
+	// .off{
+	// 	display: none !important;
+	// }
+	// .fade{
+	// 	@include vendorize(animation,fadeOut 1s forwards);
+	// }
+	// #legend{
+	// 	display: none;
+	// }
 }
 
 #contact{
-	background: $yellow;
-	background-color: $yellow;
-	color: $yellow;
+	background: $orange;
+	background-color: $orange;
+	color: $orange;
 	padding: 3em 0;
 	p{
 		margin-left: 2em;
