@@ -1,102 +1,7 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-@mixin vendorize($property, $value) {
-	-webkit-#{$property}: $value;
-	-moz-#{$property}: $value;
-	-ms-#{$property}: $value;
-	-o-#{$property}: $value;
-	#{$property}: $value;
-}
-@mixin keyframes($name) {
-	@-webkit-keyframes #{$name} {
-		@content;
-	}
-	@-moz-keyframes #{$name} {
-		@content;
-	}
-	@-ms-keyframes #{$name} {
-		@content;
-	}
-	@keyframes #{$name} {
-		@content;
-	}
-}
-@mixin rotate($value){
-	-webkit-transform:rotate(#{$value});
-	-moz-transform:rotate(#{$value});
-	-ms-transform:rotate(#{$value});
-	transform:rotate(#{$value});
-}
-@mixin skew($value){
-	-webkit-transform:skew(#{$value});
-	-moz-transform:skew(#{$value});
-	-ms-transform:skew(#{$value});
-	transform:skew(#{$value});
-}
-@mixin origin($value){
-	-webkit-transform-origin:(#{$value});
-	-moz-transform-origin:(#{$value});
-	-ms-transform-origin:(#{$value});
-	transform-origin:(#{$value});
-}
+@import "base";
 
 
-@import "compass/reset";
-
-$orange: rgb(255,87,43);
-$yellow: rgb(255,176,26);
-$blue: rgb(43,43,87);
-
-body, html{
-	height: 100%;
-	width: 100%;
-	/*font-family: sans-serif;*/
-	font-family: 'Gotham A', 'Gotham B';
-	font-weight: 400;
-	font-style: normal;
-	/*font-weight: lighter;*/
-	@include vendorize(font-smoothing,antialiased);
-}
-
-a{
-	color: #fff;
-	text-decoration: none;
-	font-weight: 700;
-}
-
-body *{
-	@include vendorize(transform-style,preserve-3d);
-	@include vendorize(backface-visibility, hidden);
-}
-
-.titles{
-	font-style: bold;
-	font-size: 3em;
-	text-transform: uppercase;
-	font-weight: 700;
-
-}
-.secondary-titles{
-	font-style: bold;
-	font-size: 1.75em;
-	line-height: 1.2em;
-	font-weight: normal;
-}
-.third-titles{
-	padding: 0.4em 1em 0.3em 1em;
-	border: solid #fff 1px;
-	display: inline-block;
-	margin: 1em 0 2em 0;
-	text-transform: uppercase;
-	font-weight: normal;
-}
-.body-type{
-	font-size: 0.8em;
-	line-height: 1.2em;
-}
 
 .yellow-nav{
 	#nav-button,#nav{
@@ -143,10 +48,11 @@ body *{
 			display: inline-block;
 			a{
 				display: block;
-				padding: 1em;
+				padding: 1.15em;
 				@include vendorize(transition,color 500);
 				color: inherit;
 				text-decoration: inherit;
+				@include light();
 			}
 		}
 		li:first-child a{
@@ -323,20 +229,24 @@ body *{
 		height: 100%;
 		text-align: center;
 		#ewings-logo{
-			padding-top: 3em;
-			max-width: 300px;
+			max-width: 350px;
 			width: 50%;
+			position: absolute;
+			left: 2em;
+			bottom: 0;
+			margin-bottom: 86px;
 		}
 		#rally-logo{
-			position: fixed;
-			left: 0;
-			bottom: 100px;
+			position: absolute;
+			bottom: 57px;
 			width: 100%;
+			text-align: right;
 			img{
 				max-width: 350px;
 			}
 			svg{
-				max-width: 350px;
+				max-width: 275px;
+				padding-right: 2em;
 			}
 		}
 	}
@@ -692,7 +602,16 @@ body *{
 		left: 0;
 		background-color: #fff;
 		opacity: 1;
+		background-position: center;
+		background-repeat: no-repeat;
+		@include vendorize(background-size,cover);
+		background-image: url("/assets/img/map-loading.jpg");
 		> div {
+			color: #fff;
+			@include bold();
+			font-size: 3em;
+			@include vendorize(text-shadow, 0px 0px 10px rgba(0,0,0,0.5));
+			@include vendorize(text-shadow, 0px 0px 10px #000);
 			display: table-cell;
 			text-align: center;
 			vertical-align: middle;
@@ -752,15 +671,7 @@ body *{
 		}
 	}
 }
-@include keyframes(fadeOut) {
-	100% {
-		display: inline;
-		opacity:0;
-	}
-	0% {
-		opacity:1;
-	}
-}
+
 
 #sponsors{
 	background-color: $blue;
@@ -795,6 +706,8 @@ body *{
 		vertical-align: top;
 		max-height: 60px;
 		width: auto;
+		padding: 0.2em 0.9em;
+		vertical-align: middle;
 	}
 
 	svg{
@@ -804,6 +717,7 @@ body *{
 		width: 100%;
 		height: 100%;
 	}
+
 }
 
 #contact{

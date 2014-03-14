@@ -1,54 +1,82 @@
+var deskTop = false,
+	tablet = false,
+	phone = true;
+
 setMarginTop();
 
-var s = skrollr.init({
+if(deskTop){
+	skrollr.init({
 		forceHeight: false
-	}),
-	carousel_sliding=false,
+	});
+}
+
+
+var carousel_sliding=false,
 	carousel_conatiner=false,
 	windowHeight=$(window).outerHeight(),
 	scrolling = false,
-	showing_nav=false;
+	showing_nav=false,
+	slideMenu = false,
+	winWidth = 0;
+
+checkPhoneHeight();
 
 $(document).ready(function() {
 	carousel_conatiner = $("#carousel");
-	$("#nav-button").click(toggleOut);
+
 	$(".slide").click(newSlide);
 	$(".slide-nav").click(navSlideClick)
-
-	$("#about").waypoint(hide_carocel);
-	$("#map").waypoint(loadGoogleMaps);
-	$("#sponsors").waypoint(fadeInSponsers,{
-		offset:100
-	});
-	$("#sponsors").waypoint(hideNavMenue,{
-		offset:-50
-	});
-	if($(window).scrollTop()<50){
-		$("#carousel").waypoint(scrollFromCarocel,{
-			offset:-100
-		});
-	}
-
-	// nav colours
-	$("#attenders").waypoint(nav_yellow_white);
-	$("#map").waypoint(nav_white_blue);
-	$("#sponsors").waypoint(nav_blue_yellow)
-
-	$(document).scrollsnap({
-		snaps: '.snap',
-		proximity: 100,
-		offset:2
-	});
-
 	$(".nav-clicker").click(menu_nav_click);
 	$("#dimond").click(function(){
 		scrollFromCarocel("down");
 	});
-
 	$("#click-away").click(hideNavMenue);
+	// $(".section").waypoint(setURLOnScroll);
+
+	// Desktop Only!
+	if(deskTop){
+		$("#nav-button").click(toggleOut);
+		$("#about").waypoint(hide_carocel);
+		$("#map").waypoint(loadGoogleMaps);
+		$("#sponsors").waypoint(fadeInSponsers,{
+			offset:100
+		});
+		$("#sponsors").waypoint(hideNavMenue,{
+			offset:-50
+		});
+		if($(window).scrollTop()<50 ){ //TODO add detection and scrolling to location based of url
+			$("#carousel").waypoint(scrollFromCarocel,{
+				offset:-100
+			});
+		}
+		// nav colours
+		$("#attenders").waypoint(nav_yellow_white);
+		$("#map").waypoint(nav_white_blue);
+		$("#sponsors").waypoint(nav_blue_yellow)
+		$(document).scrollsnap({
+			snaps: '.snap',
+			proximity: 100,
+			offset:2
+		});
+	} else if(tablet) {
+
+
+	} else if(phone){
+		slideMenu = $("#nav-container").pullSlider({inmode:true,debug:false});
+		setUpMap();
+		moveContact();
+	}
+
+
 });
 
+
 $(window).load(function(){
+	if(phone){
+		console.log("yep "+ $("#nav-container").outerHeight())
+		slideMenu.manualResize();
+		slideMenu.refindHeight();
+	}
 	setTimeout(function(){
 		$("#loading-screen").fadeOut('slow');
 		setTimeout(function(){
@@ -57,13 +85,29 @@ $(window).load(function(){
 	},1000);
 });
 
+function setURLOnScroll(event){
+	if(this.id == "carousel" || this.id == "spacer"){
+		setURL(" ");
+		return false;
+	}
+	setURL(this.id);
+}
 
 function menu_nav_click(event){
 	event.preventDefault();
+
+	if(slideMenu && slideMenu.clickable()){
+		event.preventDefault
+		return false;
+	}
+	if(phone){
+		slideMenu.refindHeight();
+	}
 	var link = this.href.split("/");
 	if(link[link.length-1] == "contact"){
 		$("#contact").toggleClass('scroll-in').toggleClass('scroll-out');
 	} else {
+		setURL(link);
 		animateScroll("#"+link[link.length-1]);
 	}
 	toggleOut(event);
@@ -223,66 +267,65 @@ function gmaploaded() {
 			rotateControl:false,
 			zoomControl:false,
 			styles: [
-  {
-    "stylers": [
-      { "visibility": "off" }
-    ]
-  },{
-    "featureType": "water",
-    "elementType": "geometry.fill",
-    "stylers": [
-      { "visibility": "on" },
-      { "color": "#26264d" }
-    ]
-  },{
-    "featureType": "road.arterial",
-    "elementType": "geometry.fill",
-    "stylers": [
-      { "visibility": "on" },
-      { "color": "#4d4d72" }
-    ]
-  },{
-    "featureType": "landscape.natural",
-    "elementType": "geometry.fill",
-    "stylers": [
-      { "visibility": "on" },
-      { "color": "#ececf4" }
-    ]
-  },{
-    "featureType": "road.local",
-    "elementType": "geometry",
-    "stylers": [
-      { "visibility": "on" },
-      { "color": "#ffa07c" }
-    ]
-  },{
-    "featureType": "transit",
-    "stylers": [
-      { "color": "#d38080" }
-    ]
-  },{
-    "featureType": "road.highway",
-    "elementType": "geometry.fill",
-    "stylers": [
-      { "visibility": "on" },
-      { "color": "#ffa719" }
-    ]
-  },{
-    "featureType": "transit.station.airport",
-    "elementType": "geometry.fill",
-    "stylers": [
-      { "visibility": "on" },
-      { "color": "#2c2c5b" }
-    ]
-  },{
-    "featureType": "road",
-    "elementType": "labels.text",
-    "stylers": [
-      { "visibility": "on" }
-    ]
-  }
-]
-
+				  {
+				    "stylers": [
+				      { "visibility": "off" }
+				    ]
+				  },{
+				    "featureType": "water",
+				    "elementType": "geometry.fill",
+				    "stylers": [
+				      { "visibility": "on" },
+				      { "color": "#26264d" }
+				    ]
+				  },{
+				    "featureType": "road.arterial",
+				    "elementType": "geometry.fill",
+				    "stylers": [
+				      { "visibility": "on" },
+				      { "color": "#4d4d72" }
+				    ]
+				  },{
+				    "featureType": "landscape.natural",
+				    "elementType": "geometry.fill",
+				    "stylers": [
+				      { "visibility": "on" },
+				      { "color": "#ececf4" }
+				    ]
+				  },{
+				    "featureType": "road.local",
+				    "elementType": "geometry",
+				    "stylers": [
+				      { "visibility": "on" },
+				      { "color": "#ffa07c" }
+				    ]
+				  },{
+				    "featureType": "transit",
+				    "stylers": [
+				      { "color": "#d38080" }
+				    ]
+				  },{
+				    "featureType": "road.highway",
+				    "elementType": "geometry.fill",
+				    "stylers": [
+				      { "visibility": "on" },
+				      { "color": "#ffa719" }
+				    ]
+				  },{
+				    "featureType": "transit.station.airport",
+				    "elementType": "geometry.fill",
+				    "stylers": [
+				      { "visibility": "on" },
+				      { "color": "#2c2c5b" }
+				    ]
+				  },{
+				    "featureType": "road",
+				    "elementType": "labels.text",
+				    "stylers": [
+				      { "visibility": "on" }
+				    ]
+				  }
+				]
 		}
 
 
@@ -300,7 +343,9 @@ function gmaploaded() {
 			makeIcon("Driving Starting Point",[43.8783451,-79.4151566],"Bayview Secondary School,<br>10077 Bayview Avenue,<br>Richmond Hill ON<br>L4C 2L4","drivers")
 			]
 		map_all_locations = locations;
-		makeLegend(locations);
+		if(!phone){
+			makeLegend(locations);
+		}
 		setTimeout(function(){
 			$("#map-loading").addClass('fade');
 			setTimeout(function(){
@@ -492,6 +537,48 @@ function animateScroll(element){
 		});
 	} else {
 		console.log("ERROR: No element passed into animateScroll");
+	}
+}
+
+
+function setURL(location){
+	if(Object.prototype.toString.call( location ) === '[object Array]'){
+		location = location[location.length-1];
+	}
+	if (history && history.pushState) {;
+		history.pushState(location,"",location);
+	} else {
+		window.location.replace("#"+location);
+	}
+}
+
+function setUpMap(){
+	var map = $("#map-loading")
+	map.children()[0].innerHTML = "Tap to load map";
+	map.click(loadMapOnClick);
+}
+function loadMapOnClick(){
+	var el = $(this).children()[0];
+	el.style.opacity = "0";
+	setTimeout(function(){
+		el.innerHTML = "Loading Map";
+		el.style.opacity = "1";
+		loadGoogleMaps("down");
+	},500)
+}
+function moveContact(){
+	$("#map").after($("#contact"));
+}
+
+
+function checkPhoneHeight(){
+	if(!phone){
+		return false;
+	}
+	var tempWidth = $(window).width()
+	if(winWidth != tempWidth){
+		$("body, html, #carousel").height($("body").height());
+		winWidth = tempWidth;
 	}
 }
 
