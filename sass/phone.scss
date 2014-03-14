@@ -1,5 +1,9 @@
 @import "base";
 
+body{
+	overflow: hidden;
+}
+
 #loading-screen{
 	display: none;
 }

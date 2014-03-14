@@ -1,6 +1,6 @@
-var deskTop = false,
+var deskTop = true,
 	tablet = false,
-	phone = true;
+	phone = false;
 
 setMarginTop();
 
@@ -32,6 +32,7 @@ $(document).ready(function() {
 
 	// Desktop Only!
 	if(deskTop){
+		console.log("set up desktop");
 		$("#dimond").click(function(){
 			scrollFromCarocel("down");
 		});

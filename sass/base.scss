@@ -85,7 +85,6 @@ body, html{
 	font-style: normal;
 	@include vendorize(text-rendering,optimizeLegibility);
 	@include vendorize(font-smoothing,antialiased);
-	overflow: hidden;
 }
 
 a{
