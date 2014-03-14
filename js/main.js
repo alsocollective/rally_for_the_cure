@@ -27,14 +27,14 @@ $(document).ready(function() {
 	$(".slide").click(newSlide);
 	$(".slide-nav").click(navSlideClick)
 	$(".nav-clicker").click(menu_nav_click);
-	$("#dimond").click(function(){
-		scrollFromCarocel("down");
-	});
 	$("#click-away").click(hideNavMenue);
 	// $(".section").waypoint(setURLOnScroll);
 
 	// Desktop Only!
 	if(deskTop){
+		$("#dimond").click(function(){
+			scrollFromCarocel("down");
+		});
 		$("#nav-button").click(toggleOut);
 		$("#about").waypoint(hide_carocel);
 		$("#map").waypoint(loadGoogleMaps);

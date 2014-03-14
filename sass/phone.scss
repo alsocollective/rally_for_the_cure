@@ -18,6 +18,7 @@
  	#nav-container{
  		background-color: $blue;
  		color: #fff;
+ 		z-index: 9999;
 
 		@include p-l(p) {
 			li a{
@@ -49,6 +50,7 @@
 
 	.pull-slider{
 		position: fixed;
+		@include vendorize(position, sticky);
 		top: 0;
 		left: 0;
 		z-index: 99;
@@ -64,6 +66,7 @@
 	.slider-window-height{
 		height: 100%;
 		position: fixed;
+		@include vendorize(position, sticky);
 		overflow: hidden;
 	}
 	.slider-window-height.slider-active{
@@ -83,6 +86,7 @@
 */
 	#carousel{
 		position: fixed;
+		@include vendorize(position, sticky);
 		width: 100%;
 		height: 100%;
 		top: 0;
@@ -131,7 +135,7 @@
 
 		#carousel-nav{
 			position: fixed;
-			top: 80px;
+			top: 40px;
 			z-index: 99;
 			text-align: center;
 			width: 100%;
@@ -156,7 +160,7 @@
 			text-align: center;
 			@include p-l(p) {
 				> img{
-					margin-top: 125px;
+					margin-top: 85px;
 					width: 50%;
 				}
 				#rally-logo{
@@ -189,12 +193,11 @@
 			position: fixed;
 			left: 0;
 			width: 100%;
-			bottom: 100px;
+			bottom: 75px;
 			text-align: center;
 			.quote{
-				width: 90%;
-				margin: 0 0 0 10%;
-				font-size: 1.7em;
+				margin: 0 1em 0 1em;
+				font-size: 1.5em;
 				text-align: left;
 				line-height: 1.2em;
 				color: #fff;
@@ -225,11 +228,29 @@
 | \_| \/ | | ' | | || /\ | | | ' | _|| v /
  \__/\__/|_|\__| |_||_||_|_|_|\__|___|_|_\
 */
+/* 
+	overflow-y: scroll;
+	@include vendorize(scrolling, touch);
+ */
+#scroller-container{
+	-webkit-overflow-scrolling: touch;
+	z-index: 800;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	overflow-y: scroll;
+	display: block;
+}
 
 #container{
+	position: relative;
+	// z-index: 801;
+	-webkit-overflow-scrolling: touch;
+
 	height: 100%;
 	background: $blue;
 	background-color: $blue;
+
 }
 
 #about{
@@ -274,13 +295,34 @@
 		}
 		p{
 			@extend .body-type;
-			margin: 1.5em 8px 0 8px;
+			margin: 1.5em 1em 0 1em;
 			color: #fff;
 		}
 		p:nth-child(9){
 			padding-bottom: 200px;
 		}
-
+	}
+	#dimond{
+		position: absolute;
+		z-index: 9;
+		top: -40px;
+		left: calc(50% - 40px);
+		width: 80px;
+		height: 80px;
+		background: $yellow;
+		background-color: $yellow;
+		@include rotate(45deg);
+		@include origin(50% 50%);
+		> div{
+			width: 70%;
+			height: 70%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-image: url("/assets/icons/down-arrow-black.png");
+			background-size: 40px;
+			@include rotate(-45deg);
+			@include origin(50% 50%);
+		}
 	}
 }
 
@@ -302,7 +344,7 @@
 		}
 		#text{
 			font-weight: lighter;
-			margin-left: 2em;
+			margin: 0 1em 0 1em;
 			text-align: left;
 		}
 

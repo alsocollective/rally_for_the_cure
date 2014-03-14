@@ -83,7 +83,9 @@ body, html{
 	font-family: 'Gotham A', 'Gotham B';
 	@include light();
 	font-style: normal;
+	@include vendorize(text-rendering,optimizeLegibility);
 	@include vendorize(font-smoothing,antialiased);
+	overflow: hidden;
 }
 
 a{
