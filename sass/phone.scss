@@ -1,0 +1,516 @@
+@import "base";
+
+#loading-screen{
+	display: none;
+}
+
+#nav-button{
+	display: none;
+}
+
+/*
+ __  _  __   _   _
+|  \| |/  \ | \ / |
+| | ' | /\ |`\ V /'
+|_|\__|_||_|  \_/
+
+ */
+ 	#nav-container{
+ 		background-color: $blue;
+ 		color: #fff;
+
+		@include p-l(p) {
+			li a{
+				padding: 5%;
+				width: 90%;
+			}
+		}
+
+		@include p-l(l) {
+			li{
+				display: inline-block;
+				a{
+					padding: 0.75em 1em;
+				}
+			}
+		}
+		a{
+			width: 100%;
+			display: inline-block;
+		}
+ 	}
+	.last-button{
+		height: 40px;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url("/assets/icons/down-arrow.png");
+		background-size: 40px;
+	}
+
+	.pull-slider{
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 99;
+		width: 100%;
+	}
+	.slider-animation{
+		-webkit-transition: all 0.5s;
+		-moz-transition: all 0.5s;
+		-o-transition: all 0.5s;
+		transition: all 0.5s;
+	}
+
+	.slider-window-height{
+		height: 100%;
+		position: fixed;
+		overflow: hidden;
+	}
+	.slider-window-height.slider-active{
+		overflow: scroll !important;
+	}
+	.slider-active .last-button{
+		@include rotate(180deg);
+		@include origin(50% 50%);
+	}
+
+
+/*
+  ___ __  ___  __  _  _   __  ___ _
+ / _//  \| _ \/__\| || |/' _/| __| |
+| \_| /\ | v / \/ | \/ |`._`.| _|| |_
+ \__/_||_|_|_\\__/ \__/ |___/|___|___|
+*/
+	#carousel{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+
+		.slide{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			z-index: 3;
+			.slide-container, .slide-text, #rally-logo{
+				width: 100%;
+				height: 100%;
+			}
+			.slide-text{
+				opacity: 0;
+				@include vendorize(transition,opacity 1s);
+			}
+			.image-background{
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+				position: absolute;
+				left: 0;
+				top: 0;
+				background-position: center;
+				background-repeat: no-repeat;
+				@include vendorize(background-size, cover);
+			}
+			@include vendorize(transition,opacity 1s);
+		}
+		.off{
+			opacity: 0;
+			display: none;
+		}
+		.heighlight{
+			z-index: 1 !important;
+			opacity: 1;
+		}
+		.text .slide-text{
+			opacity: 1 !important;
+		}
+
+		#carousel-nav{
+			position: fixed;
+			top: 80px;
+			z-index: 99;
+			text-align: center;
+			width: 100%;
+			.slide-nav{
+				display: inline-block;
+				width: 14px;
+				height: 14px;
+				margin: 0.50em;
+				background-color: $yellow;
+				opacity: 0.5;
+				@include vendorize(transition,background 0.2s);
+				@include vendorize(border-radius,50%);
+			}
+			.active{
+				background: $blue;
+			}
+		}
+
+		#logo-slide{
+			height: 100%;
+			width: 100%;
+			text-align: center;
+			@include p-l(p) {
+				> img{
+					margin-top: 125px;
+					width: 50%;
+				}
+				#rally-logo{
+					position: absolute;
+					left: 0;
+					bottom: 100px;
+					svg,img{
+						max-width: 50%;
+					}
+				}
+			}
+
+			@include p-l(l) {
+				vertical-align: middle;
+				> img{
+					width: 40%;
+					margin-top: 100px;
+					vertical-align: top;
+				}
+				#rally-logo{
+					display: inline-block;
+					width: 50%;
+					height: 100%;
+					margin-top: -50px;
+
+				}
+			}
+		}
+		#quote-container{
+			position: fixed;
+			left: 0;
+			width: 100%;
+			bottom: 100px;
+			text-align: center;
+			.quote{
+				width: 90%;
+				margin: 0 0 0 10%;
+				font-size: 1.7em;
+				text-align: left;
+				line-height: 1.2em;
+				color: #fff;
+				font-weight: bolder;
+				@include vendorize(text-shadow, 0px 0px 10px rgba(0,0,0,0.5));
+				@include vendorize(text-shadow, 0px 0px 10px #000);
+			}
+			@include p-l(l) {
+				.quote{
+					font-size: 1.2em;
+				}
+			}
+		}
+		div:nth-child(1) .image-background{
+			background-image: url("/assets/img/landing-1.jpg");
+		}
+		div:nth-child(2) .image-background{
+			background-image: url("/assets/img/landing-2.jpg");
+		}
+		div:nth-child(3) .image-background{
+			background-image: url("/assets/img/landing-3.jpg");
+		}
+	}
+
+/*
+  ___ __  __  _ _____ __  _ __  _ ___ ___
+ / _//__\|  \| |_   _/  \| |  \| | __| _ \
+| \_| \/ | | ' | | || /\ | | | ' | _|| v /
+ \__/\__/|_|\__| |_||_||_|_|_|\__|___|_|_\
+*/
+
+#container{
+	height: 100%;
+	background: $blue;
+	background-color: $blue;
+}
+
+#about{
+	position: relative;
+	#background-image-container{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		#background-1{
+			width: 100%;
+			height: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			@include vendorize(background-size,cover);
+			background-image: url("/assets/img/about-bg-2.jpg");
+		}
+	}
+	.title{
+		@extend .titles;
+		font-size: 2.3em;
+		padding-top: 2em;
+		width: 100%;
+		text-align: center;
+	}
+	#imageBox{
+		background-position: center;
+		background-repeat: no-repeat;
+		@include vendorize(background-size,cover);
+		background-image: url("/assets/img/about-prt.jpg");
+		width: 15em;
+		height: 15em;
+		margin: 2em auto;
+		@include vendorize(border-radius,50%);
+	}
+	#right{
+		p:nth-child(1){
+			@extend .secondary-titles;
+			margin: 0 8px 0 8px;
+			font-weight: 700;
+		}
+		p{
+			@extend .body-type;
+			margin: 1.5em 8px 0 8px;
+			color: #fff;
+		}
+		p:nth-child(9){
+			padding-bottom: 200px;
+		}
+
+	}
+}
+
+#attenders{
+	.main-coloum{
+		color: #fff;
+		text-align: center;
+		padding-top: 3em;
+		h2{
+			@extend .third-titles;
+			margin-bottom: 0.5em;
+		}
+		svg{
+			height: 30%;
+			width: 30%;
+			margin: 0 auto;
+			display: block;
+			fill: #fff;
+		}
+		#text{
+			font-weight: lighter;
+			margin-left: 2em;
+			text-align: left;
+		}
+
+		h3{
+			@extend .body-type;
+			text-decoration: underline;
+		}
+		p{
+			@extend .body-type;
+			margin: 1.5em 8px 0 0;
+		}
+		p:last-child{
+			padding-bottom: 3em;
+		}
+		table{
+			border-collapse: separate;
+			width: 80%;
+			font-size: 0.9em;
+			margin: 1em 0;
+			tr{
+				td{
+					padding: 0.3em 0;
+					width: 50%;
+					border-top: solid #fff 1px;
+				}
+			}
+			tr:last-child{
+				td{
+					border-bottom: solid #fff 1px;
+				}
+			}
+
+		}
+		// background-image: url("/assets/img/half.svg");
+	}
+	.background-coloums{
+		display: none;
+	}
+	#guests{
+		background-color: $orange;
+	}
+	#pilots{
+		background-color: $yellow;
+	}
+	#drivers{
+		background-color: $blue;
+	}
+}
+
+#registration{
+	background-position: center;
+	background-repeat: no-repeat;
+	@include vendorize(background-size,cover);
+	background-image: url("/assets/img/registration-1.jpg");
+	color: #fff;
+	.title{
+		@extend .titles;
+		font-size: 2.3em;
+		padding-top: 2em;
+		width: 100%;
+		text-align: center;
+	}
+	h2{
+		@extend .third-titles;
+		margin-bottom: 0.5em;
+	}
+	.half{
+		font-weight: lighter;
+		margin-left: 2em;
+		text-align: left;
+		p{
+			@extend .body-type;
+			margin: 0.5em 8px 1em 0;
+		}
+	}
+	#docs{
+		font-weight: lighter;
+		margin: 0 2em 0 2em;
+		text-align: left;
+		> div{
+			padding: 1em 0;
+			display: inline-block;
+			width: 50%;
+			text-align: center;
+		}
+		div:last-child{
+			width: 100%;
+			padding-bottom: 3em;
+		}
+	}
+}
+
+#map{
+	width: 100%;
+	height: 70%;
+	background-color: #fff;
+	#map-container{
+		height: 100%;
+		width: 100%;
+	}
+	#map-loading{
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: table;
+		background-position: center;
+		background-repeat: no-repeat;
+		@include vendorize(background-size,cover);
+		background-image: url("/assets/img/map-loading.jpg");
+		> div{
+			opacity: 1;
+			color: #fff;
+			@include bold();
+			font-size: 3em;
+			@include vendorize(text-shadow, 0px 0px 10px rgba(0,0,0,0.5));
+			@include vendorize(text-shadow, 0px 0px 10px #000);
+			display: table-cell;
+			text-align: center;
+			vertical-align: middle;
+			@include vendorize(transition,opacity 0.5s);
+		}
+	}
+	#map-loading .clicked{
+		opacity: 1;
+	}
+	.off{
+		display: none !important;
+	}
+	.fade{
+		@include vendorize(animation,fadeOut 1s forwards);
+	}
+	#legend{
+		display: none;
+	}
+}
+
+#contact{
+	background: $yellow;
+	background-color: $yellow;
+	color: $yellow;
+	padding: 3em 0;
+	p{
+		margin-left: 2em;
+	}
+	span, a{
+		color: #fff;
+		font-size: 1em;
+		display: block;
+	}
+	span:first-child{
+		@extend .body-type;
+		text-transform: uppercase;
+		font-weight: bolder;
+	}
+}
+
+#sponsors{
+	background-color: $blue;
+	color: #fff;
+	text-align: center;
+	svg{
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+	}
+	#title{
+		@extend .titles;
+		font-size: 2.3em;
+		padding-top: 2em;
+		width: 100%;
+		text-align: center;
+	}
+	h3{
+		@extend .body-type;
+		text-transform: uppercase;
+		font-weight: bolder;
+		// padding: 1em 0;
+	}
+	.sponsor{
+		padding-top: 3em;
+		img{
+			vertical-align: middle;
+			max-height: 100px;
+		}
+	}
+	.sponsor:last-child{
+		padding-bottom: 3em;
+	}
+	> div:nth-child(3) img{
+			max-width: 75%;
+			padding: 5%;
+	}
+	> div:nth-child(4) img{
+			max-width: 40%;
+			padding: 5%;
+	}
+	> div:nth-child(5) img{
+			max-width: 30%;
+			padding: 1.5%;
+	}
+	> div:nth-child(6) img{
+			max-width: 23%;
+			padding: 1%;
+	}
+}
+
+
+

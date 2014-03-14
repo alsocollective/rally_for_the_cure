@@ -1,0 +1,136 @@
+// http://patorjk.com/software/taag/#p=display&f=Stforek&t=General
+
+@import "compass/reset";
+$orange: rgb(255,87,43);
+$yellow: rgb(255,176,26);
+$blue: rgb(43,43,87);
+
+
+
+/*
+ __ __ ___   ___ __  _
+|  V  | \ \_/ / |  \| |
+| \_/ | |> , <| | | ' |
+|_| |_|_/_/ \_\_|_|\__|
+*/
+	@mixin vendorize($property, $value) {
+		-webkit-#{$property}: $value;
+		-moz-#{$property}: $value;
+		-ms-#{$property}: $value;
+		-o-#{$property}: $value;
+		#{$property}: $value;
+	}
+	@mixin keyframes($name) {
+		@-webkit-keyframes #{$name} {
+			@content;
+		}
+		@-moz-keyframes #{$name} {
+			@content;
+		}
+		@-ms-keyframes #{$name} {
+			@content;
+		}
+		@keyframes #{$name} {
+			@content;
+		}
+	}
+	@mixin bold(){
+		font-weight: 700;
+	}
+	@mixin light(){
+		font-weight: 400;
+	}
+	@mixin rotate($value){
+		-webkit-transform:rotate(#{$value});
+		-moz-transform:rotate(#{$value});
+		-ms-transform:rotate(#{$value});
+		transform:rotate(#{$value});
+	}
+	@mixin skew($value){
+		-webkit-transform:skew(#{$value});
+		-moz-transform:skew(#{$value});
+		-ms-transform:skew(#{$value});
+		transform:skew(#{$value});
+	}
+	@mixin origin($value){
+		-webkit-transform-origin:(#{$value});
+		-moz-transform-origin:(#{$value});
+		-ms-transform-origin:(#{$value});
+		transform-origin:(#{$value});
+	}
+	@mixin p-l($scape){
+		@if $scape == l {
+			@media screen and (orientation:landscape) { @content; }
+		}
+		@else if $scape == p {
+			@media screen and (orientation:portrait) { @content; }
+		}
+	}
+
+/*
+ __  __    __  ___
+|  \/  \ /' _/| __|
+| -< /\ |`._`.| _|
+|__/_||_||___/|___|
+*/
+body *{
+	@include vendorize(transform-style,preserve-3d);
+	@include vendorize(backface-visibility, hidden);
+}
+body, html{
+	height: 100%;
+	width: 100%;
+	font-family: 'Gotham A', 'Gotham B';
+	@include light();
+	font-style: normal;
+	@include vendorize(font-smoothing,antialiased);
+}
+
+a{
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.titles{
+	font-style: bold;
+	font-size: 3em;
+	text-transform: uppercase;
+	@include bold();
+}
+.secondary-titles{
+	font-style: bold;
+	font-size: 1.75em;
+	line-height: 1.2em;
+	font-weight: normal;
+}
+.third-titles{
+	padding: 0.4em 1em 0.3em 1em;
+	border: solid #fff 1px;
+	display: inline-block;
+	margin: 1em 0 2em 0;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+.body-type{
+	font-size: 1em;
+	line-height: 1.2em;
+}
+
+
+
+
+
+@include keyframes(fadeOut) {
+	100% {
+		display: inline;
+		opacity:0;
+	}
+	0% {
+		opacity:1;
+	}
+}
+
+
+
+
