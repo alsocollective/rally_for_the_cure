@@ -10,14 +10,15 @@ if(deskTop){
 	});
 }
 
-
 var carousel_sliding=false,
+	carousel_timimg=setInterval(function(){carouselSwap()},10000),
 	carousel_conatiner=false,
 	windowHeight=$(window).outerHeight(),
 	scrolling = false,
 	showing_nav=false,
 	slideMenu = false,
-	winWidth = 0;
+	winWidth = 0,
+	sldNum = 1;
 
 checkPhoneHeight();
 
@@ -72,7 +73,6 @@ $(document).ready(function() {
 
 });
 
-
 $(window).load(function(){
 	if(phone){
 		console.log("yep "+ $("#nav-container").outerHeight())
@@ -107,7 +107,7 @@ function menu_nav_click(event){
 	}
 	var link = this.href.split("/");
 	if(link[link.length-1] == "contact"){
-		$("#contact").toggleClass('scroll-in').toggleClass('scroll-out');
+		//$("#contact").toggleClass('scroll-in').toggleClass('scroll-out');
 	} else {
 		setURL(link);
 		animateScroll("#"+link[link.length-1]);
@@ -117,7 +117,7 @@ function menu_nav_click(event){
 }
 function hideNavMenue(){
 	if(!showing_nav){
-		$("#contact").toggleClass('scroll-in').toggleClass('scroll-out');
+		//$("#contact").toggleClass('scroll-in').toggleClass('scroll-out');
 		showing_nav = true;
 		setTimeout(function(){
 			showing_nav = false;
@@ -150,6 +150,7 @@ function toggleTall(){
 
 // CAROUSEL
 function navSlideClick(e){
+
 	if(carousel_sliding){
 		return false;
 	}
@@ -159,7 +160,15 @@ function navSlideClick(e){
 	changeSlide($($("#carousel .heighlight")[0]),$($("#carousel").children()[parseInt(ElNum)]))
 }
 
-
+// Temporary Timed Carousel
+function carouselSwap(sld){
+	sldNum++;
+	if(sldNum > 7){
+		sldNum = 1;
+	}
+	$("#carousel .active").removeClass('active');
+	changeSlide($($("#carousel .heighlight")[0]),$($("#carousel").children()[parseInt(sldNum)]))
+}
 
 // control function
 function newSlide(e){
@@ -334,15 +343,15 @@ function gmaploaded() {
 		map = new google.maps.Map(document.getElementById('map-container'), mapOptions);
 
 		var locations = [
-			makeIcon("Buttonville Hanger",[43.8613492,-79.3667179],"Meeting at Buttonville Airport Hanger 17A","guests"),
-			makeIcon("Airport Parking",[43.8638698,-79.3661961],"180 Renfrew Drive","guests"),
-			makeIcon("Buttonville Airport",[43.8610426,-79.368975],"CYKZ","pilots"),
-			makeIcon("Peterborough Airport",[54.9880443,-85.4437069],"CYPO !might be wrong","pilots"),
-			makeIcon("Edenvale Airport",[44.4439291,-79.9636755],"CNV8","pilots"),
-			makeIcon("Lindsay Airport",[44.364022,-78.7827989],"CNFA !code name did not come up","pilots"),
-			makeIcon("Oshawa Airport",[43.9245641,-78.8967467],"CYOO","pilots"),
-			makeIcon("Kingston Airport",[44.2252428,-76.596066],"CYGK","pilots"),
-			makeIcon("Driving Starting Point",[43.8783451,-79.4151566],"Bayview Secondary School,<br>10077 Bayview Avenue,<br>Richmond Hill ON<br>L4C 2L4","drivers")
+			makeIcon("Buttonville Hanger<br>",[43.8613492,-79.3667179],"Meeting at Buttonville<br>Airport Hanger 17A","guests"),
+			makeIcon("Airport Parking<br>",[43.8638698,-79.3661961],"180 Renfrew<br>Drive","guests"),
+			makeIcon("Buttonville Airport<br>",[43.8610426,-79.368975],"<br>CYKZ","pilots"),
+			makeIcon("Peterborough Airport<br>",[54.9880443,-85.4437069],"<br>CYPO !might be wrong","pilots"),
+			makeIcon("Edenvale Airport<br>",[44.4439291,-79.9636755],"<br>CNV8","pilots"),
+			makeIcon("Lindsay Airport<br>",[44.364022,-78.7827989],"<br>CNFA !code name did not come up","pilots"),
+			makeIcon("Oshawa Airport<br>",[43.9245641,-78.8967467],"<br>CYOO","pilots"),
+			makeIcon("Kingston Airport<br>",[44.2252428,-76.596066],"<br>CYGK","pilots"),
+			makeIcon("Driving Starting Point<br>",[43.8783451,-79.4151566],"Bayview Secondary School,<br>10077 Bayview Avenue,<br>Richmond Hill ON<br>L4C 2L4","drivers")
 			]
 		map_all_locations = locations;
 		if(!phone){
@@ -416,7 +425,8 @@ function makeIcon(title,location,description,id){
 	var location = new google.maps.LatLng(location[0],location[1]);
 
 	var infowindow = new google.maps.InfoWindow({
-		content: "<h2>"+title+"</h2><p>"+description+"</p>",
+		//content: "<h2>"+title+"</h2><p>"+description+"</p>",
+		content: "<h2>"+title+" "+description+"</h2>",
 		display:false
 	});
 
@@ -582,7 +592,7 @@ function loadMapOnClick(){
 	},500)
 }
 function moveContact(){
-	$("#map").after($("#contact"));
+	//$("#map").after($("#contact"));
 }
 
 

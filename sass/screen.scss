@@ -276,7 +276,7 @@
 			width: 77%;
 			max-width: 1000px;
 			margin: 0 auto;
-			font-size: 2.7em;
+			font-size: 1.7em;
 			text-align: left;
 			padding-bottom: 1em;
 			line-height: 1.2em;
@@ -446,6 +446,7 @@
 #attenders{
 	color: #fff;
 	min-height: 100%;
+	background-color: $yellow;
 	.main-coloum{
 		width: 33.3333333333333333%;
 		margin-top: 8%;
@@ -457,6 +458,7 @@
 		svg{
 			fill:#fff;
 			max-height: 12%;
+			max-width: 150px;
 			padding-bottom: 0.75em;
 		}
 	}
@@ -546,6 +548,9 @@
 		}
 	}
 	#guests{
+		.link{
+			text-decoration: underline;
+		}
 		h3{
 			margin-top: 2em;
 		}
@@ -698,6 +703,7 @@
 	position: relative;
 	text-align: center;
 	color: #fff;
+	padding-bottom: 10em;
 
 	#title{
 		@extend .titles;
@@ -712,6 +718,19 @@
 		padding-top: 1em;
 		display: none;
 		margin: 0 auto;
+	}
+	
+	#platinum{
+		color: #ddd;
+	}
+	#gold{
+		color: #ffd95f;
+	}
+	#silver{
+		color: #777;
+	}
+	#bronze{
+		color: #d8741a;
 	}
 
 	h3{
@@ -740,11 +759,11 @@
 }
 
 #contact{
-	position: fixed;
+	//position: fixed;
 	bottom: 0%;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	//height: 200px;
 	z-index: 99;
 	#click-away{
 		width: 100%;
